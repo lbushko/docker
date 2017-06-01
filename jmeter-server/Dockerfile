@@ -1,6 +1,6 @@
-# Use jmeter-base
+# Use lbushko/jmeter:jmeter-base
 
-FROM jmeter-base
+FROM lbushko/jmeter:jmeter-base
 
 # Ports to be exposed from the container for JMeter Slaves/Server
 EXPOSE 1099 50000
