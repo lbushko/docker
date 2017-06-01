@@ -1,0 +1,11 @@
+# Create docker-container for master
+
+docker run -dit --name master -p 60000:60000 lbushko/jmeter:jmeter-master /bin/bash
+
+# Create docker-container for servers
+
+docker run -dit -e LOCALIP='52.10.0.2' -p 1099:1099 -p 50000:50000 lbushko/jmeter:jmeter-serverAWS /bin/bash
+
+# Run test
+
+./jmeter -n -t flightFX_API_load.jmx -Djava.rmi.server.hostname=52.10.0.1 -Dclient.rmi.localport=60000 -R52.10.0.2,52.10.0.3
