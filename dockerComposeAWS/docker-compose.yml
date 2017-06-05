@@ -1,0 +1,19 @@
+version: '3'
+
+services:
+
+    master:
+        image: lbushko/jmeter:jmeter-master
+        stdin_open: true
+        container_name: master
+        tty: true
+        hostname: master
+        ports:
+            - 60000:60000/tcp
+    slave:
+        image: lbushko/jmeter:jmeter-serverAWS
+        stdin_open: true
+        tty: true
+        ports:
+            - 1099:1099/tcp
+            - 50000:50000/tcp
