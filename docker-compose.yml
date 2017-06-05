@@ -1,0 +1,20 @@
+version: '3'
+
+services:
+
+    master:
+        image: lbushko/jmeter:jmeter-master
+        container_name: master
+        tty: true
+        hostname: master
+        networks:
+            - lyubomyrs
+    slave:
+        image: lbushko/jmeter:jmeter-server
+        tty: true
+        networks:
+            - lyubomyrs
+            
+networks:
+    lyubomyrs:
+        driver: bridge
