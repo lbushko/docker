@@ -8,6 +8,6 @@ docker run -dit -e LOCALIP='52.10.0.2' -p 1099:1099 -p 50000:50000 lbushko/jmete
 
 # Run test
 
-./jmeter -n -t flightFX_API_load.jmx -Djava.rmi.server.hostname=52.10.0.1 -Dclient.rmi.localport=60000 -R52.10.0.2,52.10.0.3
+./jmeter -n -t testName.jmx -Djava.rmi.server.hostname=52.10.0.1 -Dclient.rmi.localport=60000 -R52.10.0.2,52.10.0.3
 
-./jmeter -n -t flightFX_API_load.jmx  -R 172.17.0.2,172.17.0.3,172.17.0.4 -l ‘reportJmeter.jtl’
+./jmeter -n -t testName.jmx  -R 172.17.0.2,172.17.0.3,172.17.0.4 -l â€˜reportJmeter.jtlâ€™
